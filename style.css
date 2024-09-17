@@ -5,6 +5,8 @@ body {
     text-align: center;
     flex-direction: column;
     color: darkorange;
+    padding: 0.25rem;
+    margin: 0.25rem;
 }
 
 button {
@@ -14,6 +16,14 @@ button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: darkorange;
     background-color: blueviolet;
+}
+
+h1 {
+    margin-block-start: 0;
+}
+
+h2 {
+    margin-block-start: 0;
 }
 
 button:active {
@@ -28,7 +38,7 @@ button:disabled {
 .centered-box {
     padding: 1rem;
     max-width: 80%;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 #time {

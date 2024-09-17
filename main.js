@@ -1,4 +1,4 @@
-let hitMebutton = document.getElementById("timer-button");
+let hitMeButton = document.getElementById("timer-button");
 let timebox =  document.getElementById("time")
 let startOverButton = document.getElementById("start-over-button");
 let timetext = document.getElementById("timeText")
@@ -10,11 +10,14 @@ function getResultComment(currentTime) {
     if (target > currentTime) {
         return "Too soon."
     } else if (currentTime > target || currentTime >= 10) {
-        hitMebutton.disabled = true;
+        hitMeButton.style.display = "none";
+        startOverButton.style.display = "block";
         return "Too late."
     } else if (target == currentTime) {
-        hitMebutton.disabled = true;
-        return "YOU DID IT!!!";
+        hitMeButton.style.display = "none";
+        startOverButton.style.display = "block";
+        resultText.style.fontSize = "300%";
+        return "YOU DID IT!!! <br> YOU SON OF A GUN!!!";
     } else {
         return "This is a weird scenario."
     }
@@ -28,7 +31,6 @@ function hitButton(element) {
 
 function showHidden() {
     timebox.style.display = "block";
-    startOverButton.style.display = "block";
 }
 
 function setRandomTarget() {
@@ -39,7 +41,7 @@ function setRandomTarget() {
 let target = setRandomTarget();
 targetText.innerHTML = target;
 
-hitMebutton.addEventListener("click", hitButton);
-hitMebutton.addEventListener("click", showHidden, {once:true});
+hitMeButton.addEventListener("click", hitButton);
+hitMeButton.addEventListener("click", showHidden, {once:true});
 
 startOverButton.addEventListener("click", f = () => window.location.reload())
