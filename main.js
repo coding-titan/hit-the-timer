@@ -10,6 +10,7 @@ function getResultComment(currentTime) {
     if (target > currentTime) {
         return "Too soon."
     } else if (currentTime > target || currentTime >= 10) {
+        hitMebutton.disabled = true;
         return "Too late."
     } else if (target == currentTime) {
         hitMebutton.disabled = true;

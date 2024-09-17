@@ -22,6 +22,7 @@ button:active {
 
 button:disabled {
     background-color: grey;
+    opacity: 1;
 }
 
 .centered-box {
