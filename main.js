@@ -4,12 +4,13 @@ let timetext = document.getElementById("timeText")
 let targetText = document.getElementById("target-text")
 let resultText = document.getElementById("result-text")
 
-function getResultComment(currentTarget, currentTime) {
-    if (currentTarget > currentTime) {
+function getResultComment(currentTime) {
+    currentTime = currentTime.toFixed(0);
+    if (target > currentTime) {
         return "Too soon."
-    } else if (currentTime > currentTarget) {
+    } else if (currentTime > target) {
         return "Too late."
-    } else if (currentTarget === currentTime) {
+    } else if (target == currentTime) {
         button.disabled = true;
         return "YOU DID IT!!!";
     } else {
@@ -19,10 +20,9 @@ function getResultComment(currentTarget, currentTime) {
 
 function hitButton(element) {
     timebox.style.display = "block";
-    let currentTime = (element.timeStamp / 1000).toFixed(0);
-    timetext.innerHTML = currentTime;
-    let currentTarget = target;
-    resultText.innerHTML = getResultComment(currentTarget, currentTime);
+    let currentTime = (element.timeStamp / 1000);
+    timetext.innerHTML = currentTime.toFixed(0);
+    resultText.innerHTML = getResultComment(currentTime);
 }
 
 function setRandomTarget() {
