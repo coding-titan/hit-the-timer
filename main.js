@@ -36,10 +36,14 @@ function setRandomTarget() {
     return newTarget;
 }
 
+function reloadPage() {
+    window.location.reload();
+}
+
 let target = setRandomTarget();
 targetText.innerHTML = target;
 
 hitMebutton.addEventListener("click", hitButton);
 hitMebutton.addEventListener("click", showHidden);
 
-// add functinality to start over button
+startOverButton.addEventListener("click", reloadPage)
