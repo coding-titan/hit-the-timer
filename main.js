@@ -4,6 +4,7 @@ let startOverButton = document.getElementById("start-over-button");
 let timetext = document.getElementById("timeText")
 let targetText = document.getElementById("target-text")
 let resultText = document.getElementById("result-text")
+let numOfGuesses = 0;
 
 function getResultComment(currentTime) {
     currentTime = Math.round(currentTime)
@@ -43,5 +44,12 @@ targetText.innerHTML = target;
 
 hitMeButton.addEventListener("click", hitButton);
 hitMeButton.addEventListener("click", showHidden, {once:true});
+hitMeButton.onclick = function() {
+    numOfGuesses ++;
+    document.getElementById("guess-counter").innerHTML = "Number of guesses: " + numOfGuesses;
+}
 
 startOverButton.addEventListener("click", f = () => window.location.reload())
+
+// Fix layout its too chaotic when the counter goes in an out, put it higher or smth
+
