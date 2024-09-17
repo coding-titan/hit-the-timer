@@ -9,4 +9,4 @@ The "play again" button, revealed by pressing **Hit Me**!,  simply reloads the p
 
 *Built with vanilla HTML, CSS and JavaScript.*
 
-*made with love and grit by Seb*
+*Made with love and grit by Seb*
