@@ -1,0 +1,32 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: darkorange;
+}
+
+button {
+    min-width: 10rem;
+    min-height: 5rem;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkorange;
+    background-color: blueviolet;
+}
+
+button:active {
+    opacity: 0.7;
+}
+
+.centered-box {
+    
+    padding: 1rem;
+    max-width: 80%;
+    margin-bottom: 5rem;
+}
+
+#time {
+    display: none;
+}
