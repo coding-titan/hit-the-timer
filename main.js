@@ -18,7 +18,10 @@ function getResultComment(currentTime) {
         hitMeButton.style.display = "none";
         startOverButton.style.display = "block";
         resultText.style.fontSize = "300%";
-        return "YOU DID IT!!! <br> YOU SON OF A GUN!!!";
+        startOverButton.style.backgroundColor = "gold";
+        startOverButton.style.color = "blueviolet";
+        document.body.style.backgroundColor = "green";
+        return "YOU DID IT!!!";
     } else {
         return "This is a weird scenario."
     }
@@ -50,6 +53,3 @@ hitMeButton.onclick = function() {
 }
 
 startOverButton.addEventListener("click", f = () => window.location.reload())
-
-// Fix layout its too chaotic when the counter goes in an out, put it higher or smth
-

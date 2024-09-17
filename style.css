@@ -28,6 +28,8 @@ h2 {
 
 button:active {
     opacity: 0.7;
+    position: relative;
+    bottom: -0.25rem;
 }
 
 button:disabled {
