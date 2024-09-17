@@ -28,7 +28,6 @@ function hitButton(element) {
 function showHidden() {
     timebox.style.display = "block";
     startOverButton.style.display = "block";
-    hitMebutton.removeEventListener("click", showHidden);
 }
 
 function setRandomTarget() {
@@ -36,14 +35,10 @@ function setRandomTarget() {
     return newTarget;
 }
 
-function reloadPage() {
-    window.location.reload();
-}
-
 let target = setRandomTarget();
 targetText.innerHTML = target;
 
 hitMebutton.addEventListener("click", hitButton);
-hitMebutton.addEventListener("click", showHidden);
+hitMebutton.addEventListener("click", showHidden, {once:true});
 
-startOverButton.addEventListener("click", reloadPage)
+startOverButton.addEventListener("click", f = () => window.location.reload())

@@ -20,6 +20,10 @@ button:active {
     opacity: 0.7;
 }
 
+button:disabled {
+    background-color: grey;
+}
+
 .centered-box {
     padding: 1rem;
     max-width: 80%;
