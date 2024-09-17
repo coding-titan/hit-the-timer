@@ -1,17 +1,18 @@
-let button = document.getElementById("timer-button");
+let hitMebutton = document.getElementById("timer-button");
 let timebox =  document.getElementById("time")
+let startOverButton = document.getElementById("start-over-button");
 let timetext = document.getElementById("timeText")
 let targetText = document.getElementById("target-text")
 let resultText = document.getElementById("result-text")
 
 function getResultComment(currentTime) {
-    currentTime = currentTime.toFixed(0);
+    currentTime = Math.round(currentTime)
     if (target > currentTime) {
         return "Too soon."
-    } else if (currentTime > target) {
+    } else if (currentTime > target || currentTime >= 10) {
         return "Too late."
     } else if (target == currentTime) {
-        button.disabled = true;
+        hitMebutton.disabled = true;
         return "YOU DID IT!!!";
     } else {
         return "This is a weird scenario."
@@ -19,18 +20,26 @@ function getResultComment(currentTime) {
 }
 
 function hitButton(element) {
-    timebox.style.display = "block";
     let currentTime = (element.timeStamp / 1000);
-    timetext.innerHTML = currentTime.toFixed(0);
     resultText.innerHTML = getResultComment(currentTime);
+    timetext.innerHTML = currentTime.toFixed(0);
+}
+
+function showHidden() {
+    timebox.style.display = "block";
+    startOverButton.style.display = "block";
+    hitMebutton.removeEventListener("click", showHidden);
 }
 
 function setRandomTarget() {
-    let newTarget = (Math.random() * 8 +2).toFixed(0);
+    let newTarget = (Math.random() * 7 +2).toFixed(0);
     return newTarget;
 }
 
 let target = setRandomTarget();
 targetText.innerHTML = target;
 
-button.addEventListener("click", hitButton)
+hitMebutton.addEventListener("click", hitButton);
+hitMebutton.addEventListener("click", showHidden);
+
+// add functinality to start over button
