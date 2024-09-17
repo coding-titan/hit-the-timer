@@ -7,10 +7,13 @@ let resultText = document.getElementById("result-text")
 function getResultComment(currentTarget, currentTime) {
     if (currentTarget > currentTime) {
         return "Too soon."
-    } else if (currentTarget < currentTime) {
+    } else if (currentTime > currentTarget) {
         return "Too late."
-    } else {
+    } else if (currentTarget === currentTime) {
+        button.disabled = true;
         return "YOU DID IT!!!";
+    } else {
+        return "This is a weird scenario."
     }
 }
 
@@ -27,7 +30,7 @@ function setRandomTarget() {
     return newTarget;
 }
 
-button.addEventListener("click", hitButton)
-
 let target = setRandomTarget();
 targetText.innerHTML = target;
+
+button.addEventListener("click", hitButton)
